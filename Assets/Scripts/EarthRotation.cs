@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoonRotation : MonoBehaviour
+public class EarthRotation : MonoBehaviour
 {
 
     public float localRotationSpeed;
     public float revolutionSpeed;
-    public Transform earth;
+    public Transform sun;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,6 @@ public class MoonRotation : MonoBehaviour
     void Update()
     {
         this.transform.Rotate(Vector3.up, localRotationSpeed * Time.deltaTime, Space.Self);
-        this.transform.RotateAround(earth.position, Vector3.up, Time.deltaTime * revolutionSpeed);
+        this.transform.RotateAround(sun.position, Vector3.up, Time.deltaTime * revolutionSpeed);
     }
 }

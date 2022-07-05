@@ -11,7 +11,6 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         CameraPosition = this.transform.position;
-
     }
 
     // Update is called once per frame
