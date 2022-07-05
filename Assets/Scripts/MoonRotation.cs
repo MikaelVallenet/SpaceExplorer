@@ -5,7 +5,9 @@ using UnityEngine;
 public class MoonRotation : MonoBehaviour
 {
 
-    public Vector3 localRotationSpeed;
+    public float localRotationSpeed;
+    public float revolutionSpeed;
+    public Transform earth;
 
     // Start is called before the first frame update
     void Start()
@@ -13,9 +15,10 @@ public class MoonRotation : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frames
     void Update()
     {
-        this.transform.Rotate(localRotationSpeed * Time.deltaTime, Space.Self);
+        this.transform.Rotate(Vector3.up, localRotationSpeed * Time.deltaTime, Space.Self);
+        this.transform.RotateAround(earth.position, Vector3.up, Time.deltaTime * revolutionSpeed);
     }
 }
